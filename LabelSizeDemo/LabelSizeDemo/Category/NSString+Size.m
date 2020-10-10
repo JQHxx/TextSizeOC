@@ -12,7 +12,7 @@
 
 /**
  计算文字大小(size)
-
+ 
  @param font 字体
  @param width 文字宽度，如果为‘0’或者‘MAXFLOAT’或者‘CGFLOAT_MAX’，该方法为计算文字宽度
  @param height 文字高度，如果为‘0’或者‘MAXFLOAT’或者‘CGFLOAT_MAX’，该方法为计算文字高度
@@ -20,10 +20,10 @@
  */
 - (CGSize)sizeWithFont:(UIFont *)font textSizeWidht:(CGFloat)width textSizeHeight:(CGFloat)height {
     if (width == MAXFLOAT || width == CGFLOAT_MAX || width == 0) {
-        CGRect rect = [self boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, height) options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font} context:nil];
+        CGRect rect = [self boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, height) options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font} context:nil];
         return CGSizeMake(rect.size.width, height);
     } else if (height == MAXFLOAT || height == CGFLOAT_MAX || height == 0) {
-        CGRect rect = [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingTruncatesLastVisibleLine|   NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font} context:nil];
+        CGRect rect = [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font} context:nil];
         return CGSizeMake(width, rect.size.height);
     }
     return CGSizeMake(0, 0);
@@ -31,7 +31,7 @@
 
 /**
  计算文字高度，允许换行计算
-
+ 
  @param font 字体
  @param width 文字宽度
  @return 返回文字的高度
@@ -53,7 +53,7 @@
 
 /**
  计算文字大小(size)
-
+ 
  @param width 文字宽度，如果为‘0’或者‘MAXFLOAT’或者‘CGFLOAT_MAX’，该方法为计算文字宽度
  @param height 文字高度，如果为‘0’或者‘MAXFLOAT’或者‘CGFLOAT_MAX’，该方法为计算文字高度
  @return 返回文字的size
@@ -61,10 +61,10 @@
 - (CGSize)sizeWithAttributedTextSizeWidht:(CGFloat)width textSizeHeight:(CGFloat)height {
     
     if (width == MAXFLOAT || width == CGFLOAT_MAX || width == 0) {
-        CGRect rect = [self boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, height) options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin context:nil];
+        CGRect rect = [self boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, height) options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin context:nil];
         return CGSizeMake(rect.size.width, height);
     } else if (height == MAXFLOAT || height == CGFLOAT_MAX || height == 0) {
-        CGRect rect = [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingTruncatesLastVisibleLine|   NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin context:nil];
+        CGRect rect = [self boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin context:nil];
         return CGSizeMake(width, rect.size.height);
     }
     return CGSizeMake(0, 0);
@@ -72,7 +72,7 @@
 
 /**
  计算文字高度，允许换行计算
-
+ 
  @param width 文字宽度
  @return 返回文字的高度
  */

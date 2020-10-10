@@ -38,6 +38,12 @@
     CGFloat width = UIScreen.mainScreen.bounds.size.width;
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc]initWithString: @"123\n456\n789"];
     [text addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:15.0] range:NSMakeRange(0, text.length)];
+    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
+    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    //paraStyle.alignment = NSTextAlignmentLeft;
+    //paraStyle.lineSpacing = 15;
+    paraStyle.firstLineHeadIndent = 60;
+    [text addAttribute:NSParagraphStyleAttributeName value:paraStyle range:NSMakeRange(0, text.length)];
     CGFloat height = [text sizeLineAttributedTextSizeWidht:width];
     CGSize size = [text sizeWithAttributedTextSizeWidht:width textSizeHeight:CGFLOAT_MAX];
     NSLog(@"%f", height);
